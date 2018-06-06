@@ -6,43 +6,47 @@ import java.sql.SQLException;
 
 public abstract class Dao
 {
-	 protected Connection con;
+     protected Connection con;
 
-	 public Dao(Connection con) {
-		super();
-		this.con = con;
-	}
+     public Dao(Connection con) {
+        super();
+        this.con = con;
+    }
 
-	public static Connection getConnection() throws ClassNotFoundException, SQLException
-	 {
-		//接続文字列の構築
-		/* ユーザ名 */
-		String user = "train2018";
-		/* パスワード */
-		String pass = "train2018";
+    public static Connection getConnection() throws ClassNotFoundException, SQLException
+     {
+        //接続文字列の構築
+        /* ユーザ名 */
+        //String user = "train2018";
+        String user = "user";
+        /* パスワード */
+        //String pass = "train2018";
+        String pass = "user";
 
-		/* サーバ名 */
-		String servername = "localhost:3306";
-		/* DB名 */
-		String dbname = "new_schema";
+        /* サーバ名 */
+        String servername = "localhost:3306";
+        //String servername = "52.196.189.26:3306";
 
-		// ドライバーのロード
-		Class.forName("com.mysql.jdbc.Driver");
+        /* DB名 */
+        String dbname = "new_schema";
 
-		//com.mysql.jdbc.Driver d= new com.mysql.jdbc.Driver();
-		//com.mysql.jdbc.JDBC4Connection c = new com.mysql.jdbc.JDBC4Connection();
+        // ドライバーのロード
+        Class.forName("com.mysql.jdbc.Driver");
 
-		//接続の実行とコネクションオブジェクトの取得
-		Connection c = DriverManager.getConnection(
-					"jdbc:mysql://"
-					+ servername
-					+ "/"
-					+ dbname,
-					user,
-					pass);
+        //com.mysql.jdbc.Driver d= new com.mysql.jdbc.Driver();
+        //com.mysql.jdbc.JDBC4Connection c = new com.mysql.jdbc.JDBC4Connection();
 
-		//取得したコネクションの返却
-		return c;
-	 }
+        //接続の実行とコネクションオブジェクトの取得
+        Connection c = DriverManager.getConnection(
+                    "jdbc:mysql://"
+                    + servername
+                    + "/"
+                    + dbname,
+                    user,
+                    pass);
+
+        //取得したコネクションの返却
+        return c;
+     }
 
 }
