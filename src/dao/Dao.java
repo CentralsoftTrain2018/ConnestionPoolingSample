@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 public abstract class Dao
 {
      protected Connection con;
@@ -13,7 +17,29 @@ public abstract class Dao
         this.con = con;
     }
 
-    public static Connection getConnection() throws ClassNotFoundException, SQLException
+    public static Connection getConnection()
+            throws SQLException
+    {
+        InitialContext context;
+        DataSource ds =null;
+        try
+        {
+            context = new InitialContext();
+            ds = (DataSource) context.lookup("java:comp/env/jdbc/myapp");
+        }
+        catch( NamingException e )
+        {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+
+         Connection con = ds.getConnection();
+
+        return con;
+     }
+
+    public static Connection getConnection2()
+            throws ClassNotFoundException, SQLException
      {
         //接続文字列の構築
         /* ユーザ名 */

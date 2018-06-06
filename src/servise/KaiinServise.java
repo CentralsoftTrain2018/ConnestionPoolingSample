@@ -31,7 +31,7 @@ public class KaiinServise {
             sb.setSex(kv.getSex());
             sb.setTourokubi(kv.getRegistdate());
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch ( SQLException e) {
 
             e.printStackTrace();
         }
@@ -51,7 +51,7 @@ public class KaiinServise {
             rb.setSex(kv.getSex());
             rb.setTourokubi(kv.getRegistdate());
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch ( SQLException e) {
 
             e.printStackTrace();
         }
@@ -80,7 +80,7 @@ public class KaiinServise {
             }
             lob.setList(list);
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch ( SQLException e) {
 
             e.printStackTrace();
         }
