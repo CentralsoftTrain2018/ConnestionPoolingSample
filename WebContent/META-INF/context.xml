@@ -3,7 +3,6 @@
     <Resource name="jdbc/myapp"
                             type="javax.sql.DataSource"
               auth="Container"
-
               type="javax.sql.DataSource"
               type="javax.sql.DataSource"
               driverClassName="com.mysql.jdbc.Driver"
