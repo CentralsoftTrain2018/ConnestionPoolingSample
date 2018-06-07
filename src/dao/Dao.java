@@ -22,7 +22,6 @@ public abstract class Dao
     {
         InitialContext context;
         DataSource ds =context;
-
         try
         {
             context = new InitialContext();
