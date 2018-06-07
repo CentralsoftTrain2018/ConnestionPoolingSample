@@ -21,7 +21,8 @@ public abstract class Dao
             throws SQLException
     {
         InitialContext context;
-        DataSource ds =null;
+        DataSource ds =context;
+
         try
         {
             context = new InitialContext();
