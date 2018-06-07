@@ -17,7 +17,7 @@ public abstract class Dao
         this.con = con;
     }
 
-    public static Connection getConnection()
+    public static Connection getConnection3()
             throws SQLException
     {
         InitialContext context;
